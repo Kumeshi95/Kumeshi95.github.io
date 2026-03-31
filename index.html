@@ -3,881 +3,511 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kumeshi Abeywickrama — Researcher · QA Engineer · Environmental Analyst</title>
-<meta name="description" content="Personal portfolio of Kumeshi Abeywickrama — researcher, QA engineer, and environmental analyst based in Germany.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<title>Kumeshi Abeywickrama — GitHub Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:        #0b0e0f;
-  --bg2:       #111518;
-  --bg3:       #171c1f;
-  --line:      rgba(255,255,255,0.07);
-  --line2:     rgba(255,255,255,0.13);
-  --text:      #dde4e8;
-  --muted:     #9fb0b8;
-  --faint:     #5c6f78;
-  --teal:      #4ecba4;
-  --teal-dim:  rgba(78,203,164,0.10);
-  --teal-glow: rgba(78,203,164,0.20);
-  --amber:     #d4a84b;
-  --amber-dim: rgba(212,168,75,0.10);
-  --purple:    #a78bca;
-  --purple-dim:rgba(167,139,202,0.10);
-  --blue:      #5ba4cf;
-  --coral:     #c97b63;
-}
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: rgba(255,255,255,0.08);
+    --border-bright: rgba(255,255,255,0.15);
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --teal: #3fb950;
+    --teal-dim: rgba(63,185,80,0.12);
+    --purple: #bc8cff;
+    --purple-dim: rgba(188,140,255,0.12);
+    --amber: #e3b341;
+    --amber-dim: rgba(227,179,65,0.12);
+    --blue: #58a6ff;
+    --blue-dim: rgba(88,166,255,0.1);
+    --coral: #ff7b72;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
 
-html { scroll-behavior: smooth; }
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-role {
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .hero-bio {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .hero-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+  .hero-link:hover { border-color: var(--border-bright); color: var(--text); }
+  .hero-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-teal { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(63,185,80,0.25); }
+  .badge-purple { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(188,140,255,0.25); }
+  .badge-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(227,179,65,0.25); }
+  .badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(88,166,255,0.25); }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Syne', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-  nav, section, footer {
-  position: relative;
-  z-index: 1;
-}
+  /* Section label */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
 
-/* ── Grain overlay ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.6;
-}
+  /* Three pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  .pillar {
+    background: var(--surface);
+    padding: 1.4rem 1.2rem;
+  }
+  .pillar-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .pillar-num.teal { color: var(--teal); }
+  .pillar-num.purple { color: var(--purple); }
+  .pillar-num.amber { color: var(--amber); }
+  .pillar h3 { font-size: 0.9rem; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
+  .pillar p { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
 
-/* ── Nav ── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  border-bottom: 1px solid var(--line);
-  background: rgba(11,14,15,0.88);
-  backdrop-filter: blur(12px);
-}
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  color: var(--text);
-  text-decoration: none;
-}
-.nav-logo span { color: var(--teal); }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--teal); }
+  /* Projects */
+  .projects { margin-bottom: 3rem; }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .project-card:first-child { border-radius: 10px 10px 0 0; }
+  .project-card:last-child { border-radius: 0 0 10px 10px; }
+  .project-card:only-child { border-radius: 10px; }
+  .project-card + .project-card { border-top: none; }
+  .project-card:hover { border-color: var(--border-bright); z-index: 1; }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .project-card.teal::before { background: var(--teal); }
+  .project-card.purple::before { background: var(--purple); }
+  .project-card.amber::before { background: var(--amber); }
+  .project-card.blue::before { background: var(--blue); }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+  .project-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .project-link:hover { color: var(--blue); border-color: var(--blue); }
+  .project-tag {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+    font-style: italic;
+  }
+  .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+  .project-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.8rem; }
+  .chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--surface2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
 
-/* ── Hero ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 3rem 5rem;
-  position: relative;
-  overflow: hidden;
-}
+  /* Timeline */
+  .timeline { margin-bottom: 3rem; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tl-item:first-child { padding-top: 0; }
+  .tl-meta { text-align: right; }
+  .tl-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .tl-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-bottom: 6px;
+  }
+  .tl-content h4 { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .tl-content .org { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem; }
+  .tl-content ul { list-style: none; padding: 0; }
+  .tl-content ul li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 2px 0 2px 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .tl-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border-bright);
+    font-size: 0.7rem;
+  }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(78,203,164,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(167,139,202,0.05) 0%, transparent 55%);
-}
+  /* Skills */
+  .skills-section { margin-bottom: 3rem; }
+  .skill-group { margin-bottom: 1.4rem; }
+  .skill-group-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--surface);
+  }
+  .skill-tag.highlight { color: var(--teal); border-color: rgba(63,185,80,0.25); background: var(--teal-dim); }
+  .skill-tag.highlight-p { color: var(--purple); border-color: rgba(188,140,255,0.25); background: var(--purple-dim); }
+  .skill-tag.highlight-a { color: var(--amber); border-color: rgba(227,179,65,0.25); background: var(--amber-dim); }
 
-.hero-index {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  color: var(--faint);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 3rem; }
+  .edu-card { background: var(--surface); padding: 1.2rem; }
+  .edu-degree { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
+  .edu-school { font-size: 0.76rem; color: var(--muted); margin-bottom: 6px; line-height: 1.4; }
+  .edu-period { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); }
 
-.hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin-bottom: 0.15em;
-}
-.hero-name em {
-  font-style: italic;
-  color: var(--teal);
-}
+  /* Awards */
+  .awards { display: flex; flex-direction: column; gap: 8px; margin-bottom: 3rem; }
+  .award {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .award-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .award-text { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .award-text strong { color: var(--text); font-weight: 500; }
 
-.hero-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2.5rem;
-}
+  /* Closing quote */
+  .closing {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .closing blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .closing blockquote em { color: var(--teal); font-style: normal; }
 
-.hero-bio {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 3rem;
-}
-.hero-bio strong { color: var(--text); font-weight: 400; }
-
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.btn {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.75rem 1.6rem;
-  border-radius: 2px;
-  transition: all 0.2s;
-  display: inline-block;
-}
-.btn-primary {
-  background: var(--teal);
-  color: #0b0e0f;
-  border: 1px solid var(--teal);
-}
-.btn-primary:hover { background: transparent; color: var(--teal); }
-.btn-ghost {
-  background: transparent;
-  color: var(--muted);
-  border: 1px solid var(--line2);
-}
-.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
-
-.hero-scroll {
-  position: absolute;
-  right: 3rem;
-  bottom: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.hero-scroll span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  color: var(--faint);
-  writing-mode: vertical-rl;
-  text-transform: uppercase;
-}
-.scroll-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--faint), transparent);
-  animation: scrollpulse 2s ease-in-out infinite;
-}
-@keyframes scrollpulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
-
-/* ── Sections shared ── */
-section { padding: 6rem 3rem; position: relative; }
-section + section { border-top: 1px solid var(--line); }
-
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
-}
-.section-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--teal);
-  letter-spacing: 0.1em;
-}
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  font-weight: 300;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-.section-line {
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-
-/* ── About / Three pillars ── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.about-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--muted);
-}
-.about-text p + p { margin-top: 1.2rem; }
-.about-text strong { color: var(--text); font-weight: 400; }
-
-.pillars { display: flex; flex-direction: column; gap: 1px; }
-.pillar {
-  background: var(--bg2);
-  border: 1px solid var(--line);
-  padding: 1.4rem 1.6rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s, background 0.2s;
-}
-.pillar:hover { background: var(--bg3); border-color: var(--line2); }
-.pillar + .pillar { border-top: none; }
-.pillar::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 2px;
-}
-.pillar.t::before { background: var(--teal); }
-.pillar.p::before { background: var(--purple); }
-.pillar.a::before { background: var(--amber); }
-.pillar-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.pillar.t .pillar-num { color: var(--teal); }
-.pillar.p .pillar-num { color: var(--purple); }
-.pillar.a .pillar-num { color: var(--amber); }
-.pillar h3 { font-size: 0.88rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; letter-spacing: 0.02em; }
-.pillar p { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
-
-/* ── Projects ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.project-card {
-  background: var(--bg2);
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.project-card:hover { background: var(--bg3); }
-.project-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-}
-.project-card.t::after { background: linear-gradient(to right, var(--teal), transparent); }
-.project-card.p::after { background: linear-gradient(to right, var(--purple), transparent); }
-.project-card.a::after { background: linear-gradient(to right, var(--amber), transparent); }
-.project-card.b::after { background: linear-gradient(to right, var(--blue), transparent); }
-
-.project-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.project-tag.t { color: var(--teal); }
-.project-tag.p { color: var(--purple); }
-.project-tag.a { color: var(--amber); }
-.project-tag.b { color: var(--blue); }
-
-.project-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-.project-sub {
-  font-size: 0.78rem;
-  color: var(--muted);
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-.project-desc {
-  font-size: 0.83rem;
-  color: var(--muted);
-  line-height: 1.65;
-  flex: 1;
-  margin-bottom: 1.2rem;
-}
-.project-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 1.2rem;
-}
-.chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  padding: 3px 8px;
-  border: 1px solid var(--line2);
-  color: var(--muted);
-  border-radius: 2px;
-  letter-spacing: 0.04em;
-}
-.project-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.67rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--muted);
-  transition: color 0.2s;
-  margin-top: auto;
-}
-.project-link::after { content: '↗'; }
-.project-link:hover { color: var(--teal); }
-
-/* ── Timeline ── */
-.timeline { max-width: 800px; }
-.tl-item {
-  display: grid;
-  grid-template-columns: 140px 24px 1fr;
-  gap: 0 1.5rem;
-  padding-bottom: 3rem;
-  position: relative;
-}
-.tl-item:last-child { padding-bottom: 0; }
-.tl-period {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--muted);
-  line-height: 1.5;
-  text-align: right;
-  padding-top: 3px;
-}
-.tl-spine {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.tl-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 4px;
-  border: 2px solid var(--bg);
-}
-.tl-dot.t { background: var(--teal); box-shadow: 0 0 8px var(--teal-glow); }
-.tl-dot.p { background: var(--purple); }
-.tl-dot.a { background: var(--amber); }
-.tl-track {
-  width: 1px;
-  flex: 1;
-  background: var(--line2);
-  margin-top: 6px;
-}
-.tl-item:last-child .tl-track { display: none; }
-.tl-content h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 2px;
-  letter-spacing: 0.01em;
-}
-.tl-org {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.67rem;
-  color: var(--muted);
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.04em;
-}
-.tl-content ul { list-style: none; }
-.tl-content ul li {
-  font-size: 0.82rem;
-  color: var(--muted);
-  padding: 3px 0 3px 16px;
-  position: relative;
-  line-height: 1.55;
-}
-.tl-content ul li::before {
-  content: '–';
-  position: absolute;
-  left: 0;
-  color: var(--faint);
-}
-
-/* ── Skills ── */
-.skills-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-.skill-group { margin-bottom: 0; }
-.skill-group-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--line);
-}
-.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  padding: 4px 11px;
-  border: 1px solid var(--line2);
-  color: var(--muted);
-  background: var(--bg2);
-  border-radius: 2px;
-  transition: all 0.15s;
-  letter-spacing: 0.02em;
-}
-.skill-tag:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
-.skill-tag.hi-t { color: var(--teal); border-color: rgba(78,203,164,0.25); background: var(--teal-dim); }
-.skill-tag.hi-p { color: var(--purple); border-color: rgba(167,139,202,0.25); background: var(--purple-dim); }
-.skill-tag.hi-a { color: var(--amber); border-color: rgba(212,168,75,0.25); background: var(--amber-dim); }
-
-/* ── Education ── */
-.edu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  margin-bottom: 3rem;
-}
-.edu-card {
-  background: var(--bg2);
-  padding: 1.8rem 1.6rem;
-  transition: background 0.2s;
-}
-.edu-card:hover { background: var(--bg3); }
-.edu-icon {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 300;
-  color: var(--faint);
-  margin-bottom: 0.8rem;
-}
-.edu-degree {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
-}
-.edu-school {
-  font-size: 0.77rem;
-  color: var(--muted);
-  line-height: 1.4;
-  margin-bottom: 0.6rem;
-}
-.edu-period {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--faint);
-}
-
-/* ── Awards ── */
-.awards-list { display: flex; flex-direction: column; gap: 8px; }
-.award {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
-  padding: 1rem 1.4rem;
-  background: var(--bg2);
-  border: 1px solid var(--line);
-  transition: border-color 0.2s;
-}
-.award:hover { border-color: var(--line2); }
-.award-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 1px;
-  width: 20px;
-}
-.award-body strong {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-.award-body span { font-size: 0.78rem; color: var(--muted); }
-
-/* ── Contact ── */
-.contact-section {
-  background: var(--bg2);
-  text-align: center;
-}
-.contact-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--text);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-.contact-headline em { color: var(--teal); font-style: normal; }
-.contact-sub {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 2.5rem;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-.contact-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  text-decoration: none;
-  padding: 0.7rem 1.4rem;
-  border: 1px solid var(--line2);
-  border-radius: 2px;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-.contact-link:hover { color: var(--teal); border-color: var(--teal); background: var(--teal-dim); }
-
-.quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--faint);
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.7;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--line);
-}
-
-/* ── Footer ── */
-footer {
-  padding: 1.5rem 3rem;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  color: var(--faint);
-  letter-spacing: 0.06em;
-}
-
-/* ── Fade-in animation ── */
-.fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
-  .hero { padding: 0 1.5rem 4rem; }
-  section { padding: 4rem 1.5rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .skills-layout { grid-template-columns: 1fr; }
-  .edu-grid { grid-template-columns: 1fr; }
-  .tl-item { grid-template-columns: 100px 20px 1fr; gap: 0 1rem; }
-  footer { flex-direction: column; gap: 8px; text-align: center; }
-  .hero-scroll { display: none; }
-}
+  @media (max-width: 600px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-badges { flex-direction: row; align-items: flex-start; }
+    .pillars, .edu-grid { grid-template-columns: 1fr; }
+    .tl-item { grid-template-columns: 1fr; }
+    .tl-meta { text-align: left; }
+  }
 </style>
 </head>
 <body>
+<div class="page">
 
-<!-- Nav -->
-<nav>
-  <a class="nav-logo" href="#">Kumeshi Abeywickrama</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-index">Portfolio · 2025</div>
-  <h1 class="hero-name">Kumeshi<br><em>Abeywickrama</em></h1>
-  <p class="hero-role">Researcher &nbsp;·&nbsp; QA Engineer &nbsp;·&nbsp; Environmental Analyst &nbsp;·&nbsp; Web Developer</p>
-  <p class="hero-bio">
-    Operating at the intersection of <strong>environmental sustainability</strong>, <strong>software quality assurance</strong>, and <strong>analytical chemistry</strong> — an uncommon combination built across three countries, two industries, and one M.Sc.
-  </p>
-  <div class="hero-cta">
-    <a class="btn btn-primary" href="#projects">View Projects</a>
-    <a class="btn btn-ghost" href="#contact">Get in Touch</a>
-    <a class="btn btn-ghost" href="https://linkedin.com/in/kumeshi-abeywickrama-024523151" target="_blank">LinkedIn ↗</a>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>scroll</span>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="section-header fade-up">
-    <span class="section-num">01</span>
-    <h2 class="section-title">About</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-text fade-up">
-      <p>I am a researcher and engineer with a background that spans three distinct but complementary disciplines. Currently pursuing an <strong>M.Sc. in International Material Flow Management</strong> at Trier University of Applied Sciences in Germany, while working as a Research Assistant at the <strong>Institute for Applied Material Flow Management (IfaS)</strong> on EU-funded sustainability programmes.</p>
-      <p>My career began in analytical chemistry at the Industrial Technology Institute in Colombo — precision work, accredited analysis, ISO compliance. That foundation informed my move into software quality assurance at Axiata Digital Labs, where I automated test suites for mobile and web platforms across Malaysia and Sri Lanka.</p>
-      <p>Since moving to Germany, I have channelled both disciplines into environmental research: building <strong>LCA tools for agri-food SMEs</strong>, conducting GHG accounting, and developing the digital infrastructure that makes EU-funded science visible and accessible.</p>
-      <p>I build things that are <strong>measurable, verifiable, and impactful</strong>.</p>
-    </div>
-    <div class="pillars fade-up">
-      <div class="pillar t">
-        <div class="pillar-num">01</div>
-        <h3>Sustainability &amp; Environment</h3>
-        <p>LCA, GHG accounting, ISO 14040/44, GHG Protocol, agricultural supply-chain assessment, EU regulatory frameworks and carbon footprint modelling.</p>
-      </div>
-      <div class="pillar p">
-        <div class="pillar-num">02</div>
-        <h3>Software Quality Assurance</h3>
-        <p>End-to-end test automation with Appium, Selenium and Robot Framework. 80% test coverage achieved across mobile and web platforms for telecom clients.</p>
-      </div>
-      <div class="pillar a">
-        <div class="pillar-num">03</div>
-        <h3>Analytical Chemistry</h3>
-        <p>ICP-MS and AAS analysis under SLAB-accredited parameters. Technical documentation and reporting to ISO/IEC 17025:2017 and ISO 9001 standards.</p>
+  <!-- Hero -->
+  <div class="hero">
+    <div>
+      <div class="hero-role">Quality Assurance · Environmental Research · Analytical Chemistry</div>
+      <h1 class="hero-name">Kumeshi<br><em>Abeywickrama</em></h1>
+      <p class="hero-bio">Researcher and engineer operating at the intersection of sustainability science, software quality assurance, and analytical chemistry. Currently based in Germany, contributing to EU-funded environmental research while completing an M.Sc. in International Material Flow Management.</p>
+      <div class="hero-links">
+        <a class="hero-link" href="mailto:kumeshimenuka@gmail.com">✉ kumeshimenuka@gmail.com</a>
+        <a class="hero-link" href="https://linkedin.com/in/kumeshi-abeywickrama-024523151">↗ LinkedIn</a>
+        <a class="hero-link" href="https://www.icew.de">↗ icew.de</a>
+        <span class="hero-link">📍 Hoppstädten-Weiersbach, DE</span>
       </div>
     </div>
+    <div class="hero-badges">
+      <span class="badge badge-teal">LCA &amp; GHG Research</span>
+      <span class="badge badge-purple">Test Automation</span>
+      <span class="badge badge-amber">EU Projects</span>
+      <span class="badge badge-blue">Full-stack Dev</span>
+    </div>
   </div>
-</section>
 
-<!-- Projects -->
-<section id="projects">
-  <div class="section-header fade-up">
-    <span class="section-num">02</span>
-    <h2 class="section-title">Live Projects</h2>
-    <div class="section-line"></div>
+  <!-- Three pillars -->
+  <div class="section-label">Three disciplines</div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num teal">01</div>
+      <h3>Sustainability &amp; Environment</h3>
+      <p>Life Cycle Assessment, GHG accounting, agricultural supply-chain analysis, EU regulatory frameworks and ISO 14040/44 compliance.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num purple">02</div>
+      <h3>Software Quality Assurance</h3>
+      <p>End-to-end test automation with Appium, Selenium and Robot Framework. 80% test coverage achieved across mobile and web platforms.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num amber">03</div>
+      <h3>Analytical Chemistry</h3>
+      <p>ICP-MS and AAS analysis under SLAB-accredited parameters. Documentation and reporting to ISO/IEC 17025:2017 and ISO 9001 standards.</p>
+    </div>
   </div>
-  <div class="projects-grid">
 
-    <div class="project-card t fade-up">
-      <div class="project-tag t">EU Co-funded · IfaS</div>
-      <h3 class="project-title">LCA-Care</h3>
-      <p class="project-sub">Collect, Analyse, Report and Evolve for Eco-innovative SMEs of the Agri-Food Sector</p>
-      <p class="project-desc">Contributed to the design, development, and testing of a digital Life Cycle Assessment tool for SMEs in the agri-food supply chain. Covers carbon footprint modelling, supply-chain data workflows, GHG accounting, and EU reporting compliance. Coordinated international partner documentation and deliverables across the full project lifecycle.</p>
+  <!-- Live Projects -->
+  <div class="section-label">Live projects</div>
+  <div class="projects">
+    <div class="project-card teal">
+      <div class="project-header">
+        <div class="project-title">LCA-Care</div>
+        <a class="project-link" href="https://lca-care.eu">lca-care.eu ↗</a>
+      </div>
+      <div class="project-tag">EU Co-funded · Agri-food LCA Tool · IfaS</div>
+      <div class="project-desc">Contributed to the design, development, and testing of a digital Life Cycle Assessment tool for SMEs in the agri-food sector. Covers carbon footprint modelling, supply-chain data workflows, GHG accounting, and EU reporting compliance. Coordinated international partner documentation and deliverables.</div>
       <div class="project-chips">
-        <span class="chip">LCA</span><span class="chip">GHG Protocol</span><span class="chip">ISO 14040/44</span><span class="chip">Database Dev</span><span class="chip">EU Reporting</span><span class="chip">Agri-food</span>
+        <span class="chip">LCA</span><span class="chip">GHG Protocol</span><span class="chip">ISO 14040/44</span><span class="chip">Database Dev</span><span class="chip">EU Reporting</span>
       </div>
-      <a class="project-link" href="https://lca-care.eu" target="_blank">lca-care.eu</a>
     </div>
-
-    <div class="project-card p fade-up">
-      <div class="project-tag p">EU Co-funded · IfaS</div>
-      <h3 class="project-title">ZEEUS</h3>
-      <p class="project-sub">Zero Emissions Entrepreneurship for Universal Sustainability</p>
-      <p class="project-desc">Project management and technical development within a sustainability-focused EU initiative. Responsibilities include sustainability assessment research, digital tool development, stakeholder support, partner coordination across multiple countries, and administrative documentation throughout the full project lifecycle.</p>
+    <div class="project-card purple">
+      <div class="project-header">
+        <div class="project-title">ZEEUS</div>
+        <a class="project-link" href="https://zeeus.org">zeeus.org ↗</a>
+      </div>
+      <div class="project-tag">EU Co-funded · Zero Emissions Entrepreneurship · IfaS</div>
+      <div class="project-desc">Project management and technical development within the ZEEUS sustainability initiative. Responsibilities include sustainability assessment research, digital tool development, stakeholder support, partner coordination, and administrative documentation across the full project lifecycle.</div>
       <div class="project-chips">
         <span class="chip">Project Management</span><span class="chip">Sustainability</span><span class="chip">Web Apps</span><span class="chip">Stakeholder Engagement</span>
       </div>
-      <a class="project-link" href="https://zeeus.org" target="_blank">zeeus.org</a>
     </div>
-
-    <div class="project-card a fade-up">
-      <div class="project-tag a">Full-stack Dev · IfaS</div>
-      <h3 class="project-title">icew.de</h3>
-      <p class="project-sub">International Conference on Environmental and Water Sciences</p>
-      <p class="project-desc">Sole developer responsible for designing, building, and deploying the full institutional conference website from scratch. Covers full-stack architecture, deployment pipeline, content management, and ongoing maintenance. Serves as the primary public face of an international academic event.</p>
-      <div class="project-chips">
-        <span class="chip">Full-stack Dev</span><span class="chip">Deployment</span><span class="chip">Architecture</span><span class="chip">Maintenance</span>
+    <div class="project-card amber">
+      <div class="project-header">
+        <div class="project-title">icew.de</div>
+        <a class="project-link" href="https://www.icew.de">icew.de ↗</a>
       </div>
-      <a class="project-link" href="https://www.icew.de" target="_blank">icew.de</a>
-    </div>
-
-    <div class="project-card b fade-up">
-      <div class="project-tag b">Applied Research · Ongoing</div>
-      <h3 class="project-title">Blockchain Carbon Trading</h3>
-      <p class="project-sub">Decentralised Micro Carbon Trading System for SMEs</p>
-      <p class="project-desc">Research into a blockchain-enabled decentralised micro carbon trading system for small enterprises — focused on enhancing transparency, traceability, and trust in GHG market participation. Addresses the growing need for verifiable, low-barrier carbon credit mechanisms for SMEs.</p>
+      <div class="project-tag">Institutional Conference Website · IfaS</div>
+      <div class="project-desc">Designed, built, and deployed the full-stack institutional website for the International Conference on Environmental and Water Sciences. Sole developer responsible for architecture, deployment pipeline, and ongoing maintenance.</div>
       <div class="project-chips">
-        <span class="chip">Blockchain</span><span class="chip">Carbon Markets</span><span class="chip">GHG</span><span class="chip">SMEs</span><span class="chip">Research</span>
+        <span class="chip">Full-stack Dev</span><span class="chip">Deployment</span><span class="chip">Maintenance</span>
       </div>
-      <span class="project-link" style="cursor:default;pointer-events:none;">ongoing research</span>
     </div>
-
+    <div class="project-card blue">
+      <div class="project-header">
+        <div class="project-title">Blockchain Micro Carbon Trading</div>
+        <span class="project-link">ongoing</span>
+      </div>
+      <div class="project-tag">Applied Research · GHG Markets · Ongoing</div>
+      <div class="project-desc">Research into a blockchain-enabled decentralised micro carbon trading system for SMEs, focusing on transparency, traceability, and trust in GHG market participation.</div>
+      <div class="project-chips">
+        <span class="chip">Blockchain</span><span class="chip">Carbon Markets</span><span class="chip">GHG</span><span class="chip">SMEs</span>
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- Experience -->
-<section id="experience">
-  <div class="section-header fade-up">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Experience</h2>
-    <div class="section-line"></div>
-  </div>
+  <!-- Timeline -->
+  <div class="section-label">Experience</div>
   <div class="timeline">
-
-    <div class="tl-item fade-up">
-      <div class="tl-period">Jun 2024<br>— Present</div>
-      <div class="tl-spine"><div class="tl-dot t"></div><div class="tl-track"></div></div>
+    <div class="tl-item">
+      <div class="tl-meta">
+        <div><span class="tl-dot" style="background:var(--teal)"></span></div>
+        <div class="tl-period">Jun 2024<br>— Present</div>
+      </div>
       <div class="tl-content">
         <h4>Research Assistant — Project Management</h4>
-        <div class="tl-org">Institute for Applied Material Flow Management (IfaS) · Hoppstädten-Weiersbach, Germany</div>
+        <div class="org">Institute for Applied Material Flow Management (IfaS) · Hoppstädten-Weiersbach, Germany</div>
         <ul>
-          <li>Contributed to design, development, and testing of <a href="https://lca-care.eu" target="_blank" style="color:var(--teal);text-decoration:none;">LCA-Care ↗</a> — a digital LCA tool for agri-food SMEs, covering carbon footprint modelling and environmental impact calculations</li>
-          <li>GHG accounting and LCA analyses aligned with GHG Protocol, ISO 14040/44, and EU reporting standards</li>
-          <li>Designed, built, and deployed <a href="https://www.icew.de" target="_blank" style="color:var(--teal);text-decoration:none;">icew.de ↗</a> — full-stack development, deployment pipeline, and ongoing maintenance</li>
-          <li>Benchmarked EU sustainability policies and contributed to methodological guidelines and certification frameworks</li>
-          <li>Coordinated tasks, timelines, and documentation across international project partners in multiple EU-funded programmes</li>
-          <li>Project management support for <a href="https://zeeus.org" target="_blank" style="color:var(--teal);text-decoration:none;">ZEEUS ↗</a>: task tracking, partner communication, and administrative documentation</li>
+          <li>LCA tool development, GHG accounting, and supply-chain environmental assessment for EU-funded projects</li>
+          <li>Full-stack development and deployment of icew.de institutional conference website</li>
+          <li>Coordination of tasks, timelines, and documentation across international partners</li>
+          <li>Data research and analysis aligned with GHG Protocol, ISO 14040/44, and EU reporting standards</li>
         </ul>
       </div>
     </div>
-
-    <div class="tl-item fade-up">
-      <div class="tl-period">May 2022<br>— Oct 2023</div>
-      <div class="tl-spine"><div class="tl-dot p"></div><div class="tl-track"></div></div>
+    <div class="tl-item">
+      <div class="tl-meta">
+        <div><span class="tl-dot" style="background:var(--purple)"></span></div>
+        <div class="tl-period">May 2022<br>— Oct 2023</div>
+      </div>
       <div class="tl-content">
         <h4>Associate Quality Assurance Engineer</h4>
-        <div class="tl-org">Axiata Digital Labs · Colombo, Sri Lanka</div>
+        <div class="org">Axiata Digital Labs · Colombo, Sri Lanka</div>
         <ul>
-          <li>End-to-end test automation strategy for Celcom Life (CLA) Mobile Application (Malaysia) — achieved 80% test coverage across mobile and web platforms</li>
-          <li>Built and maintained automation scripts for My Dialog mobile and web applications using Appium and Selenium</li>
-          <li>Certified in Eggplant Functional (Keysight Technologies); scripted and executed test cases per client specifications</li>
-          <li>Sprint-wise regression and sanity testing in SIT and PVT environments; defect tracking and lifecycle management in Jira</li>
-          <li>BDD and API testing using Cucumber, GallopRail, and RestAssured on internal projects</li>
-          <li>Cross-platform usability testing on Windows, Android, and iOS; participated in automation code review sessions</li>
+          <li>End-to-end test automation for Celcom Life (CLA) Mobile (Malaysia) and My Dialog mobile & web — 80% test coverage achieved</li>
+          <li>Automation frameworks: Appium, Selenium, Robot Framework, Eggplant Functional (certified)</li>
+          <li>API and BDD testing with RestAssured, Cucumber, and GallopRail</li>
+          <li>Sprint-wise regression and sanity testing in SIT and PVT environments; defect lifecycle management in Jira</li>
+          <li>Cross-platform usability testing on Windows, Android, and iOS</li>
         </ul>
       </div>
     </div>
-
-    <div class="tl-item fade-up">
-      <div class="tl-period">Oct 2021<br>— Jun 2023</div>
-      <div class="tl-spine"><div class="tl-dot a"></div><div class="tl-track"></div></div>
+    <div class="tl-item">
+      <div class="tl-meta">
+        <div><span class="tl-dot" style="background:var(--amber)"></span></div>
+        <div class="tl-period">Oct 2021<br>— Jun 2023</div>
+      </div>
       <div class="tl-content">
         <h4>Assistant Research Technologist</h4>
-        <div class="tl-org">Industrial Technology Institute · Colombo, Sri Lanka</div>
+        <div class="org">Industrial Technology Institute · Colombo, Sri Lanka</div>
         <ul>
-          <li>Accredited ICP-MS and AAS analysis of fertiliser, food and beverage, water, wastewater, and cosmetics samples under SLAB-accredited parameters</li>
-          <li>Technical documentation and report production in compliance with ISO/IEC 17025:2017 and ISO 9001:2015</li>
-          <li>Optimised laboratory workflows to reduce time and resource consumption in sample analysis procedures</li>
-          <li>Maintained accurate records of experiments and observations for reliable data interpretation</li>
+          <li>Accredited ICP-MS and AAS analysis of fertiliser, food, water, wastewater, and cosmetics samples under SLAB parameters</li>
+          <li>Technical reporting in compliance with ISO/IEC 17025:2017 and ISO 9001:2015</li>
+          <li>Optimised laboratory workflows to reduce time and resource consumption</li>
         </ul>
       </div>
     </div>
-
   </div>
-</section>
 
-<!-- Skills -->
-<section id="skills">
-  <div class="section-header fade-up">
-    <span class="section-num">04</span>
-    <h2 class="section-title">Skills &amp; Tools</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="skills-layout">
-    <div class="skill-group fade-up">
+  <!-- Skills -->
+  <div class="section-label">Skills &amp; tools</div>
+  <div class="skills-section">
+    <div class="skill-group">
       <div class="skill-group-label">Testing &amp; QA</div>
       <div class="skill-tags">
-        <span class="skill-tag hi-p">Appium</span>
-        <span class="skill-tag hi-p">Selenium</span>
-        <span class="skill-tag hi-p">Robot Framework</span>
-        <span class="skill-tag hi-p">Eggplant Functional</span>
-        <span class="skill-tag hi-p">RestAssured</span>
-        <span class="skill-tag hi-p">Cucumber / BDD</span>
-        <span class="skill-tag hi-p">GallopRail</span>
-        <span class="skill-tag">Jira</span>
+        <span class="skill-tag highlight-p">Appium</span>
+        <span class="skill-tag highlight-p">Selenium</span>
+        <span class="skill-tag highlight-p">Robot Framework</span>
+        <span class="skill-tag highlight-p">Eggplant Functional</span>
+        <span class="skill-tag highlight-p">RestAssured</span>
+        <span class="skill-tag highlight-p">Cucumber / BDD</span>
+        <span class="skill-tag highlight-p">Jira</span>
         <span class="skill-tag">SIT / PVT</span>
         <span class="skill-tag">Regression Testing</span>
         <span class="skill-tag">API Testing</span>
         <span class="skill-tag">Cross-platform Testing</span>
       </div>
     </div>
-    <div class="skill-group fade-up">
-      <div class="skill-group-label">Sustainability &amp; Environment</div>
+    <div class="skill-group">
+      <div class="skill-group-label">Sustainability &amp; Environmental</div>
       <div class="skill-tags">
-        <span class="skill-tag hi-t">Life Cycle Assessment</span>
-        <span class="skill-tag hi-t">GHG Accounting</span>
-        <span class="skill-tag hi-t">GHG Protocol</span>
-        <span class="skill-tag hi-t">ISO 14040/44</span>
-        <span class="skill-tag hi-t">ISO 14064</span>
+        <span class="skill-tag highlight">LCA</span>
+        <span class="skill-tag highlight">GHG Accounting</span>
+        <span class="skill-tag highlight">GHG Protocol</span>
+        <span class="skill-tag highlight">ISO 14040/44</span>
+        <span class="skill-tag highlight">ISO 14064</span>
         <span class="skill-tag">Carbon Footprint Calculation</span>
         <span class="skill-tag">Circular Economy</span>
         <span class="skill-tag">Agri-food Supply Chain</span>
         <span class="skill-tag">EU Reporting Standards</span>
-        <span class="skill-tag">IPCC Guidelines</span>
       </div>
     </div>
-    <div class="skill-group fade-up">
+    <div class="skill-group">
       <div class="skill-group-label">Programming &amp; Development</div>
       <div class="skill-tags">
         <span class="skill-tag">Python</span>
@@ -885,141 +515,69 @@ footer span {
         <span class="skill-tag">C</span>
         <span class="skill-tag">HTML / CSS</span>
         <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Full-stack Web Dev</span>
+        <span class="skill-tag">Full-stack Web Development</span>
         <span class="skill-tag">Database Management</span>
       </div>
     </div>
-    <div class="skill-group fade-up">
-      <div class="skill-group-label">Laboratory &amp; Analytical Chemistry</div>
+    <div class="skill-group">
+      <div class="skill-group-label">Laboratory &amp; Chemistry</div>
       <div class="skill-tags">
-        <span class="skill-tag hi-a">ICP-MS</span>
-        <span class="skill-tag hi-a">AAS</span>
+        <span class="skill-tag highlight-a">ICP-MS</span>
+        <span class="skill-tag highlight-a">AAS</span>
         <span class="skill-tag">ISO/IEC 17025:2017</span>
         <span class="skill-tag">ISO 9001:2015</span>
         <span class="skill-tag">Scientific Writing</span>
         <span class="skill-tag">Sample Analysis</span>
-        <span class="skill-tag">SLAB Accreditation</span>
-      </div>
-    </div>
-    <div class="skill-group fade-up">
-      <div class="skill-group-label">Project &amp; Research Management</div>
-      <div class="skill-tags">
-        <span class="skill-tag">EU Project Coordination</span>
-        <span class="skill-tag">Stakeholder Engagement</span>
-        <span class="skill-tag">Technical Reporting</span>
-        <span class="skill-tag">International Partner Comms</span>
-        <span class="skill-tag">Task Tracking</span>
-        <span class="skill-tag">Documentation</span>
-      </div>
-    </div>
-    <div class="skill-group fade-up">
-      <div class="skill-group-label">Languages</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi-t">Sinhalese — Native</span>
-        <span class="skill-tag hi-t">English — C1</span>
-        <span class="skill-tag">German — A2</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Education -->
-<section id="education">
-  <div class="section-header fade-up">
-    <span class="section-num">05</span>
-    <h2 class="section-title">Education &amp; Certifications</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="edu-grid fade-up">
+  <!-- Education -->
+  <div class="section-label">Education</div>
+  <div class="edu-grid">
     <div class="edu-card">
-      <div class="edu-icon">M.Sc.</div>
-      <div class="edu-degree">International Material Flow Management</div>
+      <div class="edu-degree">M.Sc. International Material Flow Management</div>
       <div class="edu-school">Trier University of Applied Sciences — Birkenfeld Campus, Germany</div>
       <div class="edu-period">Oct 2023 — Present</div>
     </div>
     <div class="edu-card">
-      <div class="edu-icon">B.Sc.</div>
-      <div class="edu-degree">Information Technology</div>
+      <div class="edu-degree">B.Sc. Information Technology</div>
       <div class="edu-school">Rajarata University of Sri Lanka</div>
       <div class="edu-period">Jan 2017 — Jul 2021</div>
     </div>
     <div class="edu-card">
-      <div class="edu-icon">Grad. Chem.</div>
       <div class="edu-degree">Graduateship in Chemistry</div>
       <div class="edu-school">Institute of Chemistry Ceylon</div>
       <div class="edu-period">2016 — 2020</div>
     </div>
   </div>
 
-  <div class="awards-list fade-up">
+  <!-- Certifications & Awards -->
+  <div class="section-label">Certifications &amp; awards</div>
+  <div class="awards">
     <div class="award">
       <div class="award-icon">🏅</div>
-      <div class="award-body">
-        <strong>Eggplant Functional Certification</strong>
-        <span>Keysight Technologies — Professional certification in functional test automation scripting and execution</span>
-      </div>
+      <div class="award-text"><strong>Eggplant Functional Certification</strong> — Keysight Technologies · Professional certification in functional test automation</div>
     </div>
     <div class="award">
       <div class="award-icon">🧪</div>
-      <div class="award-body">
-        <strong>Associate Chemist</strong>
-        <span>Institute of Chemistry Ceylon</span>
-      </div>
+      <div class="award-text"><strong>Associate Chemist</strong> — Institute of Chemistry Ceylon</div>
     </div>
     <div class="award">
       <div class="award-icon">🏆</div>
-      <div class="award-body">
-        <strong>RUSL Startup Ideation Hackathon — Runners Up</strong>
-        <span>Techstars in Partnership with Google, 2020 — Competed in idea pitching for a technology startup concept</span>
-      </div>
+      <div class="award-text"><strong>RUSL Startup Ideation Hackathon — Runners Up</strong> · Techstars in Partnership with Google (2020) · Competed in idea pitching for a tech startup concept</div>
     </div>
     <div class="award">
       <div class="award-icon">🥇</div>
-      <div class="award-body">
-        <strong>Australian National Chemistry Quiz — Distinction</strong>
-        <span>Junior Division, 2011</span>
-      </div>
+      <div class="award-text"><strong>Australian National Chemistry Quiz — Distinction</strong> · Junior Division (2011)</div>
     </div>
   </div>
-</section>
 
-<!-- Contact -->
-<section id="contact" class="contact-section">
-  <div class="section-header fade-up" style="justify-content:center; margin-bottom:2rem;">
-    <span class="section-num">06</span>
-    <h2 class="section-title">Get in Touch</h2>
-    <div class="section-line"></div>
+  <!-- Closing quote -->
+  <div class="closing">
+    <blockquote>"Chemistry taught me precision. IT taught me automation. Sustainability research taught me that <em>both matter for the planet.</em>"</blockquote>
   </div>
-  <p class="contact-headline fade-up">Let's work on something<br><em>meaningful together.</em></p>
-  <p class="contact-sub fade-up">Open to collaborations in sustainability research, environmental data analysis, QA engineering, EU-funded project work, and full-stack development.</p>
-  <div class="contact-links fade-up">
-    <a class="contact-link" href="mailto:kumeshimenuka@gmail.com">✉ Email</a>
-    <a class="contact-link" href="https://linkedin.com/in/kumeshi-abeywickrama-024523151" target="_blank">LinkedIn ↗</a>
-  </div>
-  <p class="quote fade-up">"Chemistry taught me precision. IT taught me automation.<br>Sustainability research taught me that both matter for the planet."</p>
-</section>
 
-<!-- Footer -->
-<footer>
-  <span>© 2025 Kumeshi Abeywickrama</span>
-  <span>Hoppstädten-Weiersbach, Germany</span>
-  <span><a href="mailto:kumeshimenuka@gmail.com">kumeshimenuka@gmail.com</a></span>
-</footer>
-
-<script>
-  // Fade-in on scroll
-  const faders = document.querySelectorAll('.fade-up');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  faders.forEach(el => observer.observe(el));
-</script>
-
+</div>
 </body>
 </html>
