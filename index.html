@@ -988,7 +988,7 @@ footer span {
   <p class="contact-headline fade-up">Let's work on something<br><em>meaningful together.</em></p>
   <p class="contact-sub fade-up">Open to collaborations in sustainability research, environmental data analysis, QA engineering, EU-funded project work, and full-stack development.</p>
   <div class="contact-links fade-up">
-    <a class="contact-link" href="/cdn-cgi/l/email-protection#ff948a929a8c9796929a918a949ebf98929e9693d19c9092">✉ Email</a>
+    <a class="contact-link" href="mailto:kumeshimenuka@gmail.com">✉ Email</a>
     <a class="contact-link" href="https://linkedin.com/in/kumeshi-abeywickrama-024523151" target="_blank">LinkedIn ↗</a>
   </div>
   <p class="quote fade-up">"Chemistry taught me precision. IT taught me automation.<br>Sustainability research taught me that both matter for the planet."</p>
@@ -998,8 +998,23 @@ footer span {
 <footer>
   <span>© 2025 Kumeshi Abeywickrama</span>
   <span>Hoppstädten-Weiersbach, Germany</span>
-  <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d9c7dfd7c1dadbdfd7dcc7d9d3f2d5dfd3dbde9cd1dddf">[email&#160;protected]</a></span>
+  <span><a href="mailto:kumeshimenuka@gmail.com">kumeshimenuka@gmail.com</a></span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-href="mailto:kumeshimenuka@gmail.com"
+<script>
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
